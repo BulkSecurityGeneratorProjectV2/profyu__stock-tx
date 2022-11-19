@@ -90,7 +90,7 @@ public class CaptchaSolver implements AutoCloseable {
 		File tmpImg = null;
 		try {
 			// 把 InputStream 中的圖片存成臨時檔案
-			tmpImg = File.createTempFile("img", ".tmp");
+			tmpImg = Files.createTempFile("img", ".tmp").toFile();
 			FileUtils.copyToFile(input, tmpImg);
 
 			// 利用 OpenCV 對影像進行前置處理
